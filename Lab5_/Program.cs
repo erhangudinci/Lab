@@ -28,50 +28,62 @@ namespace Lab5_
                 bool loop1 = true;
                 do
                 {
-                    Console.Clear();
-                    Console.WriteLine("Välj");
-                    Console.WriteLine("1 - Skapa vara");
-                    Console.WriteLine("2 - Inventera vara");
-                    Console.WriteLine("3 - Lista vara");
-                    Console.WriteLine("4 - Avsluta");
-                    int userChoice;
-                    
-                    if (int.TryParse(Console.ReadLine(), out userChoice) && userChoice >= 1 && userChoice <= 4)
-                    {
-                        switch (userChoice)
-                        {
-                            case 1:
-                            {
-                                CreateItem(stock, ecoStockItem, stockItem, plate, juice);
-                                loop1 = false;
-                                break;
-                            }
-                            case 2:
-                            {
-                                InventoryMetod(stock);
-                                loop1 = false;
-                                break;
-                            }
-                            case 3:
-                            {
-                                loop1 = Show(stock, loop1);
-                                   
-                                break;
-                            }
-                            case 4:
-                            {
-                                loop1 = false;
-                                loop = false;
-                                break;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Du kan bara välja med siffror mellan 1 - 4! Prova igen!");
-                    }
+                    PrintMainMenu();
+                    loop1 = MakeMainChoice(stock, ecoStockItem, stockItem, plate, juice, loop1, ref loop);
                 } while (loop1);
             }
+        }
+
+        private static bool MakeMainChoice(Stock stock, EcoStockItem ecoStockItem, StockItem stockItem, Plate plate, Juice juice,
+            bool loop1, ref bool loop)
+        {
+            int userChoice;
+
+            if (int.TryParse(Console.ReadLine(), out userChoice) && userChoice >= 1 && userChoice <= 4)
+            {
+                switch (userChoice)
+                {
+                    case 1:
+                    {
+                        CreateItem(stock, ecoStockItem, stockItem, plate, juice);
+                        loop1 = false;
+                        break;
+                    }
+                    case 2:
+                    {
+                        InventoryMetod(stock);
+                        loop1 = false;
+                        break;
+                    }
+                    case 3:
+                    {
+                        loop1 = Show(stock, loop1);
+
+                        break;
+                    }
+                    case 4:
+                    {
+                        loop1 = false;
+                        loop = false;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("Du kan bara välja med siffror mellan 1 - 4! Prova igen!");
+            }
+            return loop1;
+        }
+
+        private static void PrintMainMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("Välj");
+            Console.WriteLine("1 - Skapa vara");
+            Console.WriteLine("2 - Inventera vara");
+            Console.WriteLine("3 - Lista vara");
+            Console.WriteLine("4 - Avsluta");
         }
 
         private static bool Show(Stock stock, bool loop1)
@@ -103,61 +115,13 @@ namespace Lab5_
         }
 
 
+
+
         private static void InventoryMetod(Stock stock)
         {
-
-            Console.Clear();
-            Console.WriteLine("Välj");
-            Console.WriteLine("1 - Ekologiskvara");
-            Console.WriteLine("2 - Tallrikar");
-            Console.WriteLine("3 - Juice");
-            Console.WriteLine("4 - Annat");
-            Console.WriteLine("5 - Tillbaka");
-            int secondUserChoice;
-            if (int.TryParse(Console.ReadLine(), out secondUserChoice) && secondUserChoice >= 1 && secondUserChoice <= 5)
-            {
-                switch (secondUserChoice)
-                {
-                    case 1:
-                        {
-                            Inventory(stock);
-                            break;
-                        }
-                    case 2:
-                        {
-                            Inventory(stock);
-                            break;
-                        }
-                    case 3:
-                        {
-                            Inventory(stock);
-                            break;
-                        }
-                    case 4:
-                        {
-                            Inventory(stock);
-                            break;
-                        }
-                    case 5:
-                        {
-
-                            break;
-
-                        }
-                }
-            }
-            else
-            {
-                Console.WriteLine("Du kan bara välja med siffror mellan 1 - 5!Prova igen!");
-                Console.WriteLine("Tryck Enter!");
-                Console.ReadLine();
-
-            }
-
+            Inventory(stock);
         }
-
-
-
+        
         private static void Inventory(Stock stock)
         {
             Console.Clear();
@@ -201,9 +165,6 @@ namespace Lab5_
             } while (loopId);
 
         }
-
-
-
         private static void CreateItem(Stock stock, EcoStockItem ecoStockItem, StockItem stockItem, Plate plate, Juice juice)
         {
             Console.Clear();
