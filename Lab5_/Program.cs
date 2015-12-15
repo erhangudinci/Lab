@@ -17,6 +17,11 @@ namespace Lab5_
             Plate plate = new Plate();
             Juice juice = new Juice();
 
+            StartProgram(stock, ecoStockItem, stockItem, plate, juice);
+        }
+
+        private static void StartProgram(Stock stock, EcoStockItem ecoStockItem, StockItem stockItem, Plate plate, Juice juice)
+        {
             bool loop = true;
             while (loop)
             {
@@ -30,56 +35,35 @@ namespace Lab5_
                     Console.WriteLine("3 - Lista vara");
                     Console.WriteLine("4 - Avsluta");
                     int userChoice;
-
-
+                    
                     if (int.TryParse(Console.ReadLine(), out userChoice) && userChoice >= 1 && userChoice <= 4)
                     {
                         switch (userChoice)
                         {
                             case 1:
-                                {
-                                    CreateItem(stock, ecoStockItem, stockItem, plate, juice);
-                                    loop1 = false;
-                                    break;
-                                }
+                            {
+                                CreateItem(stock, ecoStockItem, stockItem, plate, juice);
+                                loop1 = false;
+                                break;
+                            }
                             case 2:
-                                {
-                                    InventoryMetod(stock);
-                                    loop1 = false;
-                                    break;
-                                }
+                            {
+                                InventoryMetod(stock);
+                                loop1 = false;
+                                break;
+                            }
                             case 3:
-                                {
-                                    Console.Clear();
-                                    Console.WriteLine("Ekologiska varor");
-                                    for (int i = 0; i < stock.StockItemLength(); i++)
-                                    {
-                                        var a = stock[i] is EcoStockItem;
-                                        if (a)
-                                        {
-                                            Console.WriteLine(stock[i]);
-                                        }
-                                    }
-                                    Console.WriteLine("Ej ekologiska varor");
-                                    for (int i = 0; i < stock.StockItemLength(); i++)
-                                    {
-                                        var validEco = stock[i] is EcoStockItem;
-                                        if (!validEco)
-                                        {
-                                            if (stock[i] != null)
-                                                Console.WriteLine(stock[i]);
-                                        }
-                                    }
-                                    Console.WriteLine("Tryck Enter för att gå tillbaka");
-                                    Console.ReadLine();
-                                    loop1 = false;
-                                    break;
-                                }
+                            {
+                                loop1 = Show(stock, loop1);
+                                   
+                                break;
+                            }
                             case 4:
-                                {
-                                    loop = false;
-                                    break;
-                                }
+                            {
+                                loop1 = false;
+                                loop = false;
+                                break;
+                            }
                         }
                     }
                     else
@@ -90,6 +74,33 @@ namespace Lab5_
             }
         }
 
+        private static bool Show(Stock stock, bool loop1)
+        {
+            Console.Clear();
+            Console.WriteLine("Ekologiska varor");
+            for (int i = 0; i < stock.StockItemLength(); i++)
+            {
+                var a = stock[i] is EcoStockItem;
+                if (a)
+                {
+                    Console.WriteLine(stock[i]);
+                }
+            }
+            Console.WriteLine("Ej ekologiska varor");
+            for (int i = 0; i < stock.StockItemLength(); i++)
+            {
+                var validEco = stock[i] is EcoStockItem;
+                if (!validEco)
+                {
+                    if (stock[i] != null)
+                        Console.WriteLine(stock[i]);
+                }
+            }
+            Console.WriteLine("Tryck Enter för att gå tillbaka");
+            Console.ReadLine();
+            loop1 = false;
+            return loop1;
+        }
 
 
         private static void InventoryMetod(Stock stock)
