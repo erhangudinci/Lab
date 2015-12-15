@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Radio", "Radio\Radio.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab5_", "Lab5_\Lab5_.csproj", "{DC730CC2-E79C-4713-9AA0-567255547E04}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab6", "Lab6\Lab6.csproj", "{35CAAFB4-B8B7-4388-B797-8E5577768E7D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{DC730CC2-E79C-4713-9AA0-567255547E04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC730CC2-E79C-4713-9AA0-567255547E04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC730CC2-E79C-4713-9AA0-567255547E04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35CAAFB4-B8B7-4388-B797-8E5577768E7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35CAAFB4-B8B7-4388-B797-8E5577768E7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35CAAFB4-B8B7-4388-B797-8E5577768E7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35CAAFB4-B8B7-4388-B797-8E5577768E7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
