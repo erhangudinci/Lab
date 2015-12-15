@@ -1,0 +1,53 @@
+﻿Övning 1
+
+1.	Vad står CLR för, och vad används den till?
+		Det står för Common Language Runtime och den används för att översätta CIL till maskinkod.
+2.	Vad är BCL?
+		Det är Base Class Library används av .Net Framework och vi kan också använda det.
+3.	Vad innebär det att kompilera källkod?
+		Att översätta en källkod.
+4.	Den första kompileringen av källkod genererar en assembly i CIL-format. Vad står CIL för?
+		Det står för Common Intermediate Language.
+5.	Vad kallas den andra kompileringen, dvs den som tar en assembly på CIL-format och omvandlar till maskinkod? 
+	Här bör du känna till både förkortning och vad den står för. 
+	När sker denna kompilering normalt?
+		Den kallas CLR och den står för Common Language Runtime och den sker då när den ska översätta bytekoden till 
+		maskinkod så man kan köra den.
+6.	Nämn en fördel och en nackdel med att .NET-program körs i en runtime-miljö.
+		Fördel: Den rensar automatisk allt som inte behövs. Bara programmet kraschar inte hela datorn.
+		Nackdel: Sämre prestanda.
+
+Övning 2
+
+1.	Vad är en identifierare?
+		Det är namn på våra variblar, metoder osv...
+2.	Hur får en identifierare se ut?
+		Det ska vara vettiga namn beroende på vad tillexempel den varibel eller metoden ska göra. Det ska användas
+		med uppercase eller lowercase. Man ska försöka undvika använda nyckelord.
+3.	Vad är camel case och pascal case?
+		Pascal case är sättet att skriva klasser, metoder, struktar osv. Första bokstaven ska vara stor och varje nytt
+		ord börjar med stor bokstav.
+		Camel case är sättet att skriva variblar, fält. Där man börjar med liten bokstav och för varje nytt ord 
+		börjar man med stor bokstav.
+4.	Vad är nyckelord?
+		Nyckelord är de orden som defienerar C# tillexempel. Man ska försöka undvika de när man ska namnge en 
+		indentifierare.
+5.	Vad innebär det att C# är case sensitive?
+		Det är att man ska vara noga, försiktig med vad man namnger sina indentifierare för om tillexempel man namnger en
+		indentifierare för a och en annan för a så blir det så att det är bara en indentifierare men om man namnger 
+		de för a och A så är två olika indentifierare. 
+6.	Kompilatorn struntar i s.k. whitespace, men för tydlighetens skulle bör alltid källkod formatteras för 
+	maximal läsbarhet. Nämn ett par olika typer av whitespace.
+		Mellanslag, tab, Ny rad och carriage return.
+7.	Vilket tecken används för att avsluta ("terminera") ett uttryck?
+		Man använder semikolon ;.
+8.	Flera uttryck kan grupperas tillsammans till ett s.k. block, t.ex. för att utföras 
+	tillsammans om ett villkor är uppfyllt. Hur grupperas uttryck?
+		Man använder klammerparantes {}.
+9.	När bör källkod kommenteras? Vilka olika kommentarstyper finns, och hur anges de?
+		När man ska förklara vad den koden gör så att man vet om man ska öppna samma kod om 1 år om koden är inte självklar.
+		Det finns en rads kommentar //, det finns flera raders kommentar /* */ och det finns dokumenterad kod som
+		innehåller XML text ///.
+
+
+	
