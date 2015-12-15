@@ -71,6 +71,7 @@ namespace Lab5_
                                         }
                                     }
                                     Console.WriteLine("Tryck Enter för att gå tillbaka");
+                                    Console.ReadLine();
                                     loop1 = false;
                                     break;
                                 }

@@ -33,7 +33,7 @@ namespace Lab5_
 
             for (int i = 0; i < stockItems.Length; i++)
             {
-                if (stockItems[i] != null)
+                if (stockItems[i] == null)
                 {
                     Console.WriteLine("Hittar inget");
                     break;
